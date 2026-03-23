@@ -2,11 +2,14 @@ console.log("script.js connected");
 
 let userAnswers = {};
 let answerButtons = document.querySelectorAll(".answer-btn");
-answerButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
+answerButtons.forEach(function(button) 
+{
+    button.addEventListener("click", function() 
+    {
         let parent = button.closest(".question-block");
         let buttonInBlock = ProgressEvent.querySelectorAll(".answer-btn");
-        buttonsInBlock.forEach(function(btn) {
+        buttonsInBlock.forEach(function(btn) 
+        {
             btn.classList.remove("selected");
         });
 
@@ -15,17 +18,23 @@ answerButtons.forEach(function(button) {
         let questionID = button.dataset.questionId;
         let pet = button.dataset.pet;
         userAnswers[questionID] = pet;
+    });
+});
 
-function displayResults() {
+function displayResults() 
+{
     let counts = {};
-    for (let key in userAnswers) {
+    for (let key in userAnswers) 
+    {
         let pet = userAnswers[key];
         counts[pet] = counts[pet] ? counts[pet] + 1 : 1;
     }
     let finalPet = "No answer yet";
     let maxCount = 0;
-    for (let pet in counts) {
-        if (counts[pet] > maxCount) {
+    for (let pet in counts) 
+    {
+        if (counts[pet] > maxCount) 
+        {
             maxCount = counts[pet];
             finalPet = pet;
         }
@@ -37,4 +46,5 @@ function displayResults() {
     resultContainer.style.display = "block";
 }
 
-document.getElementById("show-results").addEventListener("click", displayResults);
+document.getElementById("show-result").addEventListener("click", displayResults);
+  
