@@ -10,27 +10,34 @@ answerButtons.forEach(function(button) {
         buttonsInBlock.forEach(function(btn) {
             btn.classList.remove("selected");
         });
-
         button.classList.add("selected");
-        let questionID = parent.id; 
-        let answer = button.dataset.answer; 
-        userAnswers[questionID] = answer;
-        console.log(userAnswers); 
+
+        let questionID = button.dataset.questionId;
+        userAnswers[questionID] = {
+            cat: parseInt(button.dataset.pointsCat),
+            dog: parseInt(button.dataset.pointsDog),
+            bird: parseInt(button.dataset.pointsBird),
+            fish: parseInt(button.dataset.pointsFish)
+        };
     });
 });
 
 function displayResults() {
-    let counts = {};
+    let totals = { cat: 0, dog: 0, bird: 0, fish: 0 };
+
     for (let key in userAnswers) {
-        let pet = userAnswers[key];
-        counts[pet] = counts[pet] ? counts[pet] + 1 : 1;
+        totals.cat += userAnswers[key].cat;
+        totals.dog += userAnswers[key].dog;
+        totals.bird += userAnswers[key].bird;
+        totals.fish += userAnswers[key].fish;
     }
 
+    let maxPoints = 0;
     let finalPet = "No answer yet";
-    let maxCount = 0;
-    for (let pet in counts) {
-        if (counts[pet] > maxCount) {
-            maxCount = counts[pet];
+
+    for (let pet in totals) {
+        if (totals[pet] > maxPoints) {
+            maxPoints = totals[pet];
             finalPet = pet;
         }
     }

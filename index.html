@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div class="container d-flex justify-content-center mt-4">
+        <img src="./img/ideas.png" class="img-fluid rounded" alt="Quiz Banner" style="max-width: 600px;">
+    </div>
+
     <h1 class="text-center mt-4">What Animal Are You?</h1>
     
     <!-- Question 1 -->
@@ -16,16 +20,32 @@
         <h4 class="mb-3">1. What’s your favorite environment?</h4>
         <div class="row g-2">
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Cat">Cozy home</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="1"
+                    data-points-cat="2" data-points-dog="0" data-points-bird="0" data-points-fish="0">
+              Cozy home
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Dog">Park / Outdoors</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="1"
+                    data-points-cat="0" data-points-dog="2" data-points-bird="0" data-points-fish="0">
+              Park / Outdoors
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Bird">Trees / Forest</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="1"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="2" data-points-fish="0">
+              Trees / Forest
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Fish">Water / Ocean</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="1"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="0" data-points-fish="2">
+              Water / Ocean
+            </button>
           </div>
         </div>
       </div>
@@ -37,16 +57,32 @@
         <h4 class="mb-3">2. How would your friends describe you?</h4>
         <div class="row g-2">
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Cat">Independent</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="2"
+                    data-points-cat="2" data-points-dog="0" data-points-bird="0" data-points-fish="0">
+              Independent
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Dog">Loyal</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="2"
+                    data-points-cat="0" data-points-dog="2" data-points-bird="0" data-points-fish="0">
+              Loyal
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Bird">Curious</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="2"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="2" data-points-fish="0">
+              Curious
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Fish">Calm</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="2"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="0" data-points-fish="2">
+              Calm
+            </button>
           </div>
         </div>
       </div>
@@ -58,27 +94,41 @@
         <h4 class="mb-3">3. What is your favorite activity?</h4>
         <div class="row g-2">
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Cat">Napping / Relaxing</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="3"
+                    data-points-cat="2" data-points-dog="0" data-points-bird="0" data-points-fish="0">
+              Napping / Relaxing
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Dog">Playing / Running</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="3"
+                    data-points-cat="0" data-points-dog="2" data-points-bird="0" data-points-fish="0">
+              Playing / Running
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Bird">Exploring / Observing</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="3"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="2" data-points-fish="0">
+              Exploring / Observing
+            </button>
           </div>
           <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="Fish">Swimming / Floating</button>
+            <button class="btn btn-outline-primary w-100 answer-btn" 
+                    data-question-id="3"
+                    data-points-cat="0" data-points-dog="0" data-points-bird="0" data-points-fish="2">
+              Swimming / Floating
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Show Result Button -->
     <div class="container d-flex justify-content-center">
       <button id="show-result" class="btn btn-success my-4">Show Results</button>
     </div>    
 
-    <!-- Output Result -->
     <div class="container d-flex justify-content-center">
       <div id="result-container" class="card p-4 mb-4" style="width: 75%; display: none;">
         <h3>Your Animal:</h3>
@@ -86,7 +136,6 @@
       </div>
     </div>
 
-    <!-- Connect JS -->
     <script src="./js/script.js"></script>
 </body>
 </html>
